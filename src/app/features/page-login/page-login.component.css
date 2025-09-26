@@ -1,0 +1,96 @@
+:host {
+  /* Faz o componente ocupar a tela inteira e centraliza o conteúdo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/assets/background.png');
+  background-position: center;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+
+}
+
+/* O card de login branco */
+.login-card {
+  background-color: #ffffff;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Largura máxima do card */
+  text-align: center;
+}
+
+/* Título "Login" */
+.login-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* Estilo dos campos de input */
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e9ecef; /* Cor de fundo cinza claro */
+  font-size: 16px;
+  box-sizing: border-box; /* Garante que padding não afete a largura total */
+}
+
+
+.input-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #007bff40; 
+}
+
+.input-group input::placeholder {
+  color: #888;
+}
+
+.forgot-password {
+  display: block; 
+  text-align: left;
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 25px;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f39c12;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #e67e22;}
+
+.forgot-password{
+  cursor: pointer; /* Isso fará o mouse virar a "mãozinha" */
+  color: rgb(98, 98, 109); /* Dê uma cor de link para ele */
+  text-decoration: underline; /* Sublinhe para ficar óbvio */
+}
