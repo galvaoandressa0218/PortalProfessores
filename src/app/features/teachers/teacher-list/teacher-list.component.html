@@ -1,1 +1,51 @@
-<p>teacher-list works!</p>
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+
+  <main class="content">
+    <div class="content-header">
+  <h1>Professores</h1>
+  <button class="add-button" (click)="openModal()">
+    <span class="material-icons">add</span>
+    Adicionar Professor
+  </button>
+</div>
+
+<app-add-professor-modal
+  *ngIf="isModalVisible"
+  (close)="closeModal()">
+</app-add-professor-modal>
+
+    <div class="professor-list">
+      <div class="list-header">
+        <div class="header-item">Nome</div>
+        <div class="header-item">Instituição</div>
+        <div class="header-item">Registro</div>
+        <div class="header-item">Data de cadastro</div>
+        <div class="header-item">Status</div>
+      </div>
+
+      <div class="list-row" *ngFor="let professor of [1]">
+
+  <div class="row-item user-info">
+    <img src="https://via.placeholder.com/40" alt="Avatar do Professor" class="avatar">
+    <span>Nome do Professor</span>
+  </div>
+
+  <div class="row-item">
+    Instituição Exemplo
+  </div>
+
+  <div class="row-item">
+    000000/UF
+  </div>
+
+  <div class="row-item">
+    00/00/0000
+  </div>
+
+  <div class="row-item status-active">
+    <span class="status-indicator"></span>
+    Ativo
+  </div>
+
+</div>
