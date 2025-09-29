@@ -1,1 +1,44 @@
-<p>subject-list works!</p>
+
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+
+  <main class="content">
+    <header class="content-header">
+      <h1>Adicionar disciplina</h1>
+    </header>
+
+    <div class="disciplinas-list-container">
+      <div class="list-header">
+        <span>Nome</span>
+        <span>Curso</span>
+        <span>Carga Horária</span>
+        <span>Tipo</span>
+        <span>Classificação</span>
+      </div>
+
+      <div class="list-body">
+        <div class="disciplina-item" *ngFor="let disciplina of disciplinas; let i = index">
+          <div class="disciplina-row" (click)="toggleDisciplina(i)">
+            <span>{{ disciplina.nome }}</span>
+            <span>{{ disciplina.curso }}</span>
+            <span>{{ disciplina.cargaHoraria }}</span>
+            <span>{{ disciplina.tipo }}</span>
+            <span>{{ disciplina.classificacao }}</span>
+            <span class="material-icons expand-icon">
+              {{ disciplinaExpandida === i ? 'expand_less' : 'expand_more' }}
+            </span>
+          </div>
+
+          <div class="disciplina-details" *ngIf="disciplinaExpandida === i">
+            <strong>Descrição</strong>
+            <p>{{ disciplina.descricao }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <button class="add-button">+ Adicionar Disciplina</button>
+
+  </main>
+</div>
+

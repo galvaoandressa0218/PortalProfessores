@@ -2,31 +2,31 @@
   <nav>
     <ul>
       <li>
-        <a routerLink="page-login">
+        <a [routerLink]="['/inicio']" routerLinkActive="active">
           <span class="material-icons">home</span>
           Página inicial
         </a>
       </li>
-      <li class="active">
-        <a routerLink="teachers">
+      <li>
+        <a [routerLink]="['/teachers']" routerLinkActive="active">
           <span class="material-icons">people</span>
           Professores
         </a>
       </li>
       <li>
-        <a routerLink="subjects">
+        <a [routerLink]="['/subjects']" routerLinkActive="active">
           <span class="material-icons">menu_book</span>
           Disciplinas
         </a>
       </li>
       <li>
-        <a routerLink="#">
+        <a [routerLink]="['/cronogramas']" routerLinkActive="active">
           <span class="material-icons">calendar_today</span>
           Cronogramas
         </a>
       </li>
       <li>
-        <a routerLink="courses">
+        <a [routerLink]="['/matrizes']" routerLinkActive="active">
           <span class="material-icons">grid_view</span>
           Matrizes curriculares
         </a>

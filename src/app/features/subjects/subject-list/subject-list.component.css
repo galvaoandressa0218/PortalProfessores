@@ -1,0 +1,113 @@
+/* Layout principal da página (reutilizável) */
+.page-container {
+  display: flex;
+  background-color: #ffffff; /* Fundo escuro geral */
+}
+
+.content {
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #f0f2f5; /* Fundo cinza claro da área de conteúdo */
+  font-family: Arial, sans-serif;
+}
+
+.content-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+/* Container da lista de disciplinas */
+.disciplinas-list-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Layout em Grid para o cabeçalho e linhas */
+.list-header,
+.disciplina-row {
+  display: grid;
+  grid-template-columns: 2.5fr 0.5fr 1fr 1fr 1fr 40px; /* Proporções das colunas + espaço para o ícone */
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+}
+
+.list-header {
+  font-weight: bold;
+  color: #666;
+  border-bottom: 2px solid #eee;
+  text-transform: capitalize;
+}
+
+.disciplina-item {
+  border-bottom: 1px solid #f0f0f0;
+}
+.disciplina-item:last-child {
+  border-bottom: none;
+}
+
+.disciplina-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.disciplina-row:hover {
+  background-color: #f9f9f9;
+}
+
+.expand-icon {
+  color: #888;
+  justify-self: end;
+}
+
+/* Detalhes expansíveis */
+.disciplina-details {
+  padding: 20px 15px;
+  background-color: #fafafa;
+  color: #555;
+  border-top: 1px solid #eee;
+}
+
+.disciplina-details strong {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.disciplina-details p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Botão de Adicionar */
+.content-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.add-button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Texto "Cursos" no canto */
+.page-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  color: #ddd;
+}
