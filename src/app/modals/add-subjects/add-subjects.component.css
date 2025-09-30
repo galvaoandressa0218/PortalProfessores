@@ -1,0 +1,90 @@
+/* Estilos base do modal (reutilizados do modal de professor) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
+
+.modal-content {
+  background-color: #3e3a3a;
+  padding: 40px;
+  border-radius: 12px;
+  color: #f0f0f0;
+  position: relative;
+  width: 600px; /* Largura ajustada para o novo formulário */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #a0a0a0;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Estilos específicos do novo formulário */
+.subject-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+  gap: 20px; /* Espaço entre os campos */
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Classe para fazer um campo ocupar a largura total do grid */
+.form-group.full-width {
+  grid-column: 1 / -1; /* Ocupa da primeira à última coluna */
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0f2f5;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box; /* Garante que o padding não aumente a largura */
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite que o usuário redimensione a altura */
+}
+
+.submit-button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end; /* Alinha o botão à direita */
+}

@@ -1,0 +1,34 @@
+<div class="page-container">
+  <app-sidebar></app-sidebar>
+
+  <main class="content">
+    <header class="content-header">
+      <h1>Matérias Cadastradas</h1>
+      <p class="subtitle">Frame 11</p>
+    </header>
+
+    <div class="materias-container">
+      <div class="list-header">
+        <span>Nome</span>
+        <span>Curso</span>
+        <span>Carga Horária</span>
+        <span>Tipo</span>
+        <span>Classificação</span>
+      </div>
+
+      <div class="list-body">
+        <a *ngFor="let materia of materias" 
+           [routerLink]="['/materias', materia.id]" 
+           class="materia-row">
+          
+          <span>{{ materia.nome }}</span>
+          <span>{{ materia.curso }}</span>
+          <span>{{ materia.cargaHoraria }}</span>
+          <span>{{ materia.tipo }}</span>
+          <span>{{ materia.classificacao }}</span>
+          <span class="material-icons chevron-icon">chevron_right</span>
+        </a>
+      </div>
+    </div>
+  </main>
+</div>

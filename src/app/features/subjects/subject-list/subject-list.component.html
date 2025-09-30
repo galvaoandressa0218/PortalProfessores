@@ -36,9 +36,14 @@
         </div>
       </div>
     </div>
-    
-      <button class="add-button">+ Adicionar Disciplina</button>
+      <footer class="content-footer">
+      <button class="add-button" (click)="openSubjectsModal()">
+        + Adicionar Disciplina
+      </button>
+    </footer>
 
   </main>
 </div>
+
+<app-add-subjects *ngIf="isSubjectsModalVisible" (close)="closeSubjectsModal()"></app-add-subjects>
 

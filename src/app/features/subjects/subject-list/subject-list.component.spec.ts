@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubjectListComponent } from './subject-list.component';
+import { AddSubjectsComponent } from '../../../modals/add-subjects/add-subjects.component';
 
 describe('SubjectListComponent', () => {
   let component: SubjectListComponent;

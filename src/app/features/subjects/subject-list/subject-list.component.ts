@@ -1,19 +1,31 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from '../../reusable/sidebar/sidebar.component';
+import { AddSubjectsComponent } from '../../../modals/add-subjects/add-subjects.component';
 
 @Component({
   selector: 'app-subject-list',
   standalone: true,
-  imports: [CommonModule, SidebarComponent],
+  imports: [CommonModule, SidebarComponent, AddSubjectsComponent], 
   templateUrl: './subject-list.component.html',
   styleUrls: ['./subject-list.component.css']
 })
 export class SubjectListComponent {
+  isSubjectsModalVisible = false;
 
-  disciplinaExpandida: number | null = 0; // Começa com a primeira linha aberta
+  // Função para abrir o modal (chamada pelo clique do botão)
+  openSubjectsModal(): void {
+    this.isSubjectsModalVisible = true;
+  }
 
- 
+  // 👇 ADICIONE ESTA FUNÇÃO PARA FECHAR O MODAL 👇
+  // Ela será chamada pelo evento (close) do seu componente de modal
+  closeSubjectsModal(): void {
+    this.isSubjectsModalVisible = false;
+  }
+
+  disciplinaExpandida: number | null = 0;
+
   disciplinas = [
     {
       nome: 'Arquitetura de Software (ARQS-20002)',
@@ -35,9 +47,9 @@ export class SubjectListComponent {
 
   toggleDisciplina(index: number): void {
     if (this.disciplinaExpandida === index) {
-      this.disciplinaExpandida = null; // Fecha a linha se ela já estiver aberta
+      this.disciplinaExpandida = null;
     } else {
-      this.disciplinaExpandida = index; // Abre a nova linha
+      this.disciplinaExpandida = index;
     }
   }
 }

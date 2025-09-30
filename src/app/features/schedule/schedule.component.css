@@ -1,0 +1,76 @@
+/* Layout principal da página */
+.page-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+}
+
+.content-header h1 {
+  font-size: 28px;
+  color: #333;
+  margin: 0;
+}
+
+.content-header .subtitle {
+  font-size: 16px;
+  color: #999;
+  margin: 5px 0 30px 0;
+}
+
+/* Container da lista */
+.materias-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+}
+
+/* Layout em Grid para o cabeçalho e as linhas */
+.list-header,
+.materia-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr auto; /* Colunas + espaço para o ícone */
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.list-header {
+  font-weight: bold;
+  color: #555;
+  padding-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.list-body {
+  margin-top: 10px;
+}
+
+/* Estilo da linha/botão da matéria */
+.materia-row {
+  background-color: #f57c00; /* Laranja */
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px; /* Cantos bem arredondados para formar a pílula */
+  margin-bottom: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.materia-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  background-color: #ef6c00; /* Laranja um pouco mais escuro */
+}
+
+.materia-row .chevron-icon {
+  justify-self: end; /* Alinha o ícone de seta à direita */
+}
