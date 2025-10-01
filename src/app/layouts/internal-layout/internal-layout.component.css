@@ -1,0 +1,9 @@
+.layout-container {
+  display: flex; /* Coloca a sidebar e o conteúdo lado a lado */
+}
+
+.page-content {
+  flex-grow: 1; /* Faz o conteúdo ocupar todo o espaço restante */
+  padding: 30px; 
+  background-color: #f0f2f5; 
+}
