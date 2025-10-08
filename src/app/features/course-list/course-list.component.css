@@ -1,0 +1,100 @@
+:host {
+  /* Paleta de cores baseada na imagem */
+  --color-background: #f4f4f4;
+  --color-primary-orange: #f58220;
+  --color-dark-text: #333;
+  --color-light-text: #fff;
+  --color-border: #e0e0e0;
+  --color-header-bg: #e9e9e9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Removido o layout da página principal, pois a sidebar não foi fornecida */
+
+.content {
+  width: 100%;
+  /* 👇 ALTERAÇÃO 1: Diminuído o padding do topo */
+  padding: 1rem 2rem 2rem 2rem;
+  background-color: var(--color-background);
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-dark-text);
+  margin-bottom: 2rem;
+}
+
+.table-container {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  /* 👇 ALTERAÇÃO 2: Alterado para 'separate' e adicionado 'border-spacing' */
+  border-collapse: separate;
+  border-spacing: 0 8px; /* 0 para horizontal, 8px para vertical */
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  /* A borda inferior não é mais necessária com border-spacing */
+}
+
+thead th {
+  color: #888;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+tbody tr {
+  background-color: var(--color-primary-orange);
+  color: var(--color-light-text);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+tbody tr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+td {
+  border-bottom: none; 
+}
+
+/* O truque dos cantos arredondados agora funciona perfeitamente! */
+tbody td:first-child { border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
+tbody td:last-child { border-top-right-radius: 8px; border-bottom-right-radius: 8px; }
+
+.arrow-cell {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-button {
+  background-color: var(--color-primary-orange);
+  color: var(--color-light-text);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-button:hover {
+  background-color: #e07010; 
+}

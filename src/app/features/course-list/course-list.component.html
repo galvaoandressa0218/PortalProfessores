@@ -1,0 +1,33 @@
+<div class="page-container">
+  <main class="content">
+    <h1 class="title">Cursos Cadastrados</h1>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Turno</th>
+            <th>Campus</th>
+            <th>Habilitação</th>
+            <th>CH</th>
+            <th></th> </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let course of courses" (click)="viewCourseDetails(course)">
+            <td>{{ course.nome }}</td>
+            <td>{{ course.turno }}</td>
+            <td>{{ course.campus }}</td>
+            <td>{{ course.habilitacao }}</td>
+            <td>{{ course.ch }}</td>
+            <td class="arrow-cell">&gt;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="actions">
+      <button class="add-button" (click)="addCourse()">Adicionar curso</button>
+    </div>
+  </main>
+</div>

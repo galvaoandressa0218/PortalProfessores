@@ -1,59 +1,59 @@
 <section class="info-section">
   <h2 class="section-header">
     <span>Ementa</span>
-    <span class="material-icons settings-icon" (click)="openEditProgramModal()">settings</span>
+    <span class="material-icons settings-icon" (click)="openModal('program')">settings</span>
   </h2>
 </section>
 
 <section class="info-section">
   <h2 class="section-header">
     <span>Objetivos</span>
-    <span class="material-icons settings-icon" (click)="openEditCourseModal()">settings</span>
+    <span class="material-icons settings-icon" (click)="openModal('course')">settings</span>
   </h2>
 </section>
 
 <section class="info-section">
   <h2 class="section-header">
     <span>Conteúdo programático</span>
-    <span class="material-icons settings-icon" (click)="openEditLearningModal()">settings</span>
+    <span class="material-icons settings-icon" (click)="openModal('learning')">settings</span>
   </h2>
 </section>
 
 <section class="info-section">
   <h2 class="section-header">
-    <span>metodologia</span>
-    <span class="material-icons settings-icon" (click)="openEditMethodologyModal()">settings</span>
+    <span>Metodologia</span>
+    <span class="material-icons settings-icon" (click)="openModal('methodology')">settings</span>
   </h2>
 </section>
 
 <section class="info-section">
   <h2 class="section-header">
     <span>Sistema de Avaliação</span>
-    <span class="material-icons settings-icon" (click)="openEditAssessmentModal()">settings</span>
+    <span class="material-icons settings-icon" (click)="openModal('assessment')">settings</span>
   </h2>
 </section>
 
 <app-edit-program 
-  *ngIf="isEditProgramModalVisible" 
-  (close)="closeEditProgramModal()">
+  *ngIf="activeModal === 'program'" 
+  (close)="closeModal()">
 </app-edit-program>
 
 <app-edit-course 
-  *ngIf="isEditCourseModalVisible" 
-  (close)="closeEditCourseModal()">
+  *ngIf="activeModal === 'course'" 
+  (close)="closeModal()">
 </app-edit-course>
 
 <app-edit-learning 
-  *ngIf="isEditLearningModalVisible" 
-  (close)="closeEditLearningModal()">
+  *ngIf="activeModal === 'learning'" 
+  (close)="closeModal()">
 </app-edit-learning>
 
 <app-edit-methodology 
-  *ngIf="isEditMethodologyModalVisible" 
-  (close)="closeEditMethodologyModal()">
+  *ngIf="activeModal === 'methodology'" 
+  (close)="closeModal()">
 </app-edit-methodology>
 
 <app-edit-assessment 
-  *ngIf="isEditAssessmentModalVisible" 
-  (close)="closeEditAssessmentModal()">
+  *ngIf="activeModal === 'assessment'" 
+  (close)="closeModal()">
 </app-edit-assessment>

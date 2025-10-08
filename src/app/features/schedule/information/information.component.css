@@ -2,6 +2,7 @@
   display: flex;
   background-color: #4a4a4a;
   min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .content {

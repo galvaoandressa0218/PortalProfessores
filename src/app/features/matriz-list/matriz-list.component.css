@@ -1,0 +1,137 @@
+
+:host {
+  --color-background: #f4f4f4;
+  --color-primary-orange: #f58220;
+  --color-dark-text: #333;
+  --color-light-text: #fff;
+  --color-border: #e0e0e0;
+  --color-subtitle-text: #666;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content {
+  width: 100%;
+  padding: 1rem 2rem 2rem 2rem;
+  background-color: var(--color-background);
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-dark-text);
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--color-subtitle-text);
+  margin-top: 0.5rem;
+}
+
+.action-button {
+  background-color: var(--color-primary-orange);
+  color: var(--color-light-text);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Espaço entre as abas */
+}
+
+.semester-header {
+  background-color: var(--color-primary-orange);
+  color: var(--color-light-text);
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.semester-header .arrow {
+  transition: transform 0.3s ease;
+}
+
+.semester-header.open .arrow {
+  transform: rotate(180deg);
+}
+
+.semester-content {
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  margin-top: -8px;
+}
+
+.discipline-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-dark-text);
+}
+
+.discipline-row:last-child {
+  border-bottom: none;
+}
+
+.no-disciplines {
+  color: var(--color-subtitle-text);
+  padding: 1rem 0;
+}
+
+.complementary-section {
+    background-color: var(--color-primary-orange);
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-light-text);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.ch-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: var(--color-dark-text);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.ch-box span {
+    margin-right: 0.5rem;
+    font-weight: 500;
+}
+
+.ch-box input {
+    border: none;
+    width: 50px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.ch-box input:focus {
+    outline: none;
+}

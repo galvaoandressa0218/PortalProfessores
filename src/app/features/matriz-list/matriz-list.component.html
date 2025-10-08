@@ -1,0 +1,47 @@
+<div class="page-container">
+  <main class="content">
+    <header class="main-header">
+      <div>
+        <h1 class="title">{{ matrix.nome }}</h1>
+        <p class="subtitle">
+          Habilitação: {{ matrix.habilitacao }} &nbsp;&nbsp;|&nbsp;&nbsp;
+          Campos: {{ matrix.campus }} &nbsp;&nbsp;|&nbsp;&nbsp;
+          Turno: {{ matrix.turno }}
+        </p>
+      </div>
+      <button class="action-button">Organizar Matrizes</button>
+    </header>
+
+    <div class="accordion">
+      <div class="accordion-item" *ngFor="let semester of matrix.semesters; let i = index">
+        
+        <div class="semester-header" (click)="toggleSemester(i)" [class.open]="openSemesterIndex === i">
+          <span>{{ semester.nome }}</span>
+          <span class="arrow">▼</span>
+        </div>
+
+        <div class="semester-content" *ngIf="openSemesterIndex === i">
+          <div class="discipline-row" *ngFor="let discipline of semester.disciplines">
+            <span>{{ discipline.nome }} ({{ discipline.codigo }})</span>
+            <span>{{ discipline.bes }}</span>
+            <span>{{ discipline.cargaHoraria }}</span>
+            <span>{{ discipline.modalidade }}</span>
+            <span>{{ discipline.tipo }}</span>
+          </div>
+          <div *ngIf="semester.disciplines.length === 0" class="no-disciplines">
+            Nenhuma disciplina cadastrada para este semestre.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="complementary-section">
+        <label for="ch-complementar">componentes complementares</label>
+        <div class="ch-box">
+            <span>CH</span>
+            <input id="ch-complementar" type="text" [value]="matrix.componentesComplementaresCH" readonly>
+        </div>
+    </section>
+
+  </main>
+</div>

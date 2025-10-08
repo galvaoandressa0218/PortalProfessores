@@ -10,6 +10,8 @@ import { SubjectListComponent } from './features/subjects/subject-list/subject-l
 import { TeacherListComponent } from './features/teachers/teacher-list/teacher-list.component'; 
 import { ScheduleComponent } from './features/schedule/schedule.component';
 import { InformationComponent } from './features/schedule/information/information.component';
+import { CourseListComponent } from './features/course-list/course-list.component';
+import { MatrizListComponent } from './features/matriz-list/matriz-list.component';
 
 // 3. Exporte apenas a constante 'routes'
 export const routes: Routes = [
@@ -26,7 +28,9 @@ export const routes: Routes = [
         { path: 'subjects', component: SubjectListComponent },
         { path: 'teachers', component: TeacherListComponent },
         { path: 'schedule', component: ScheduleComponent },
-        { path: 'schedule/information/:id', component: InformationComponent }
+        { path: 'schedule/information/:id', component: InformationComponent },
+        { path: 'course-list', component: CourseListComponent },
+        { path: 'matriz-list', component: MatrizListComponent },
       ]
     }
 ];

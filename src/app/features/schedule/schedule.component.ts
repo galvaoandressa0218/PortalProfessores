@@ -8,6 +8,9 @@ import { EditAssessmentComponent } from '../../modals/edit-assessment/edit-asses
 import { EditLearningComponent } from '../../modals/edit-learning/edit-learning.component';
 import { EditMethodologyComponent } from '../../modals/edit-methodology/edit-methodology.component';
 
+// (Opcional, mas recomendado) Define os tipos de modais para segurança e autocompletar
+type ActiveModal = 'program' | 'course' | 'learning' | 'methodology' | 'assessment';
+
 @Component({
   selector: 'app-schedule',
   standalone: true,
@@ -17,36 +20,22 @@ import { EditMethodologyComponent } from '../../modals/edit-methodology/edit-met
     EditCourseComponent,
     EditAssessmentComponent,
     EditLearningComponent,
-    EditMethodologyComponent // 2. VERIFIQUE SE O COMPONENTE ESTÁ AQUI
+    EditMethodologyComponent 
   ],
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent {
-  // Variáveis de controle para CADA modal
-  isEditProgramModalVisible = false;
-  isEditCourseModalVisible = false;
-  isEditLearningModalVisible = false;
-  isEditMethodologyModalVisible = false;
-  isEditAssessmentModalVisible = false;
+  // Apenas uma propriedade para controlar todos os modais
+  activeModal: ActiveModal | null = null;
 
-  // --- Funções para o modal 'edit-program' (Ementa) ---
-  openEditProgramModal(): void { this.isEditProgramModalVisible = true; }
-  closeEditProgramModal(): void { this.isEditProgramModalVisible = false; }
+  // Um método genérico para abrir qualquer modal
+  openModal(modalName: ActiveModal): void {
+    this.activeModal = modalName;
+  }
 
-  // --- Funções para o modal 'edit-course' (Objetivos) ---
-  openEditCourseModal(): void { this.isEditCourseModalVisible = true; }
-  closeEditCourseModal(): void { this.isEditCourseModalVisible = false; }
-  
-  // --- Funções para o modal 'edit-learning' (Conteúdo Programático) ---
-  openEditLearningModal(): void { this.isEditLearningModalVisible = true; }
-  closeEditLearningModal(): void { this.isEditLearningModalVisible = false; }
-
-  // --- Funções para o modal 'edit-methodology' (Metodologia) ---
-  openEditMethodologyModal(): void { this.isEditMethodologyModalVisible = true; }
-  closeEditMethodologyModal(): void { this.isEditMethodologyModalVisible = false; }
-
-  // --- Funções para o modal 'edit-assessment' (Sistema de Avaliação) ---
-  openEditAssessmentModal(): void { this.isEditAssessmentModalVisible = true; }
-  closeEditAssessmentModal(): void { this.isEditAssessmentModalVisible = false; }
+  // Um método único para fechar o modal ativo
+  closeModal(): void {
+    this.activeModal = null;
+  }
 }

@@ -1,1 +1,20 @@
-<p>edit-assessment works!</p>
+<div class="modal-overlay" (click)="close.emit()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+
+    <button class="close-button" (click)="close.emit()">&times;</button>
+
+    <form class="emenda-form">
+      <div class="form-group">
+        <label for="emenda">Agora, informe como será o sistema avaliativo da disciplina</label>
+        <textarea id="emenda" rows="6" placeholder="Area de digitação"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="submit-button">
+          proximo
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>

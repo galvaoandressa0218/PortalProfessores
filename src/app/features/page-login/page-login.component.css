@@ -1,5 +1,5 @@
 :host {
-  /* Faz o componente ocupar a tela inteira e centraliza o conteúdo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
